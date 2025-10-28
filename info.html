@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info & FAQ - TrustCheck SMOCARNO</title>
+    <meta name="description" content="Domande frequenti, linee guida e informazioni sul sistema TrustCheck.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        .faq-item {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-lg);
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+            transition: all var(--transition-base);
+        }
+        
+        .faq-question {
+            padding: var(--spacing-lg) var(--spacing-xl);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: var(--font-size-lg);
+            color: var(--color-primary);
+            transition: background-color var(--transition-fast);
+        }
+        
+        .faq-question:hover {
+            background-color: var(--color-bg-secondary);
+        }
+        
+        .faq-icon {
+            transition: transform var(--transition-fast);
+            flex-shrink: 0;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-slow);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 var(--spacing-xl) var(--spacing-lg);
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <svg class="brand-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="brand-name">TrustCheck</span>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="vendors.html" class="nav-link">Vendor</a></li>
+                <li><a href="recensione.html" class="nav-link">Lascia Recensione</a></li>
+                <li><a href="info.html" class="nav-link active">Info & FAQ</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Cambia tema">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Informazioni & FAQ</h1>
+            <p class="page-description">
+                Tutto quello che devi sapere su TrustCheck: come funziona, linee guida, privacy e domande frequenti.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="padding: var(--spacing-3xl) 0;">
+        <div class="container" style="max-width: 900px;">
+            <h2 style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-xl); color: var(--color-primary); text-align: center;">Domande Frequenti</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Cos'è TrustCheck?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            TrustCheck è un sistema trasparente di recensioni e valutazioni vendor per la community SMOCARNO. Permette di condividere esperienze in modo anonimo per aiutare altri membri a fare scelte più sicure e consapevoli.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Le recensioni sono davvero anonime?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Sì, completamente. Non raccogliamo indirizzi IP, cookie di tracking o alcuna informazione identificativa. Non c'è modo di risalire all'identità di chi lascia una recensione. La privacy è una nostra priorità assoluta.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Come funziona il sistema di rating?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Usiamo un sistema multi-dimensionale che valuta 5 aspetti principali:
+                            <ul style="margin-top: 12px; margin-left: 20px;">
+                                <li><strong>Affidabilità:</strong> Rispetto degli accordi e coerenza</li>
+                                <li><strong>Qualità:</strong> Standard del prodotto/servizio</li>
+                                <li><strong>Comunicazione:</strong> Chiarezza e disponibilità</li>
+                                <li><strong>Sicurezza:</strong> Pratiche di privacy e packaging</li>
+                                <li><strong>Tempi:</strong> Puntualità nelle consegne</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Cosa significano i badge dei vendor?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            I badge sono indicatori di performance e reputazione:
+                            <ul style="margin-top: 12px; margin-left: 20px;">
+                                <li><span class="badge badge-verified">Affidabile</span> - Rating >4.5, almeno 50 recensioni positive</li>
+                                <li><span class="badge badge-top">Top Rated</span> - I migliori vendor, rating >4.8</li>
+                                <li><span class="badge badge-new">Nuovo</span> - Vendor recenti, ancora in fase di valutazione</li>
+                                <li><span class="badge badge-warning">Attenzione</span> - Problemi segnalati, rating <4.0</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Come vengono moderate le recensioni?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Un team di moderatori fidati della community verifica le segnalazioni di recensioni sospette, spam o inappropiate. Il processo è trasparente e orientato alla protezione della community.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Posso modificare o eliminare una recensione?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Dato che le recensioni sono completamente anonime, non è tecnicamente possibile associarle a un utente per modificarle. Questo è il compromesso per garantire la massima privacy.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>TrustCheck è legale?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            TrustCheck è una piattaforma di condivisione di esperienze e informazioni, pienamente legale. Non facilita attività illegali, ma promuove la riduzione del danno e la consapevolezza. Ogni utente è responsabile delle proprie azioni nel rispetto delle leggi locali.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Come posso contattare il supporto?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Puoi contattarci attraverso i canali Telegram della community SMOCARNO (link nel footer) o tramite email (se disponibile). Per questioni di sicurezza, usa sempre canali ufficiali verificati.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section id="privacy" style="padding: var(--spacing-3xl) 0; background-color: var(--color-bg-secondary);">
+        <div class="container" style="max-width: 900px;">
+            <h2 style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-xl); color: var(--color-primary); text-align: center;">Privacy Policy</h2>
+            
+            <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-xl); padding: var(--spacing-2xl); line-height: 1.8; color: var(--color-text-secondary);">
+                <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Dati Raccolti</h3>
+                <p style="margin-bottom: var(--spacing-lg);">
+                    TrustCheck è progettato con <strong>privacy-by-design</strong>. Non raccogliamo:
+                </p>
+                <ul style="margin-left: 20px; margin-bottom: var(--spacing-xl);">
+                    <li>Indirizzi IP</li>
+                    <li>Cookie di tracking o profilazione</li>
+                    <li>Dati personali identificativi</li>
+                    <li>Informazioni di pagamento</li>
+                    <li>Geolocalizzazione precisa</li>
+                </ul>
+                
+                <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Storage Locale</h3>
+                <p style="margin-bottom: var(--spacing-xl);">
+                    I dati delle recensioni e dei vendor sono memorizzati localmente nel tuo browser (localStorage) per il funzionamento del sito. Puoi cancellarli in qualsiasi momento attraverso le impostazioni del browser.
+                </p>
+                
+                <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">GDPR Compliance</h3>
+                <p style="margin-bottom: var(--spacing-lg);">
+                    TrustCheck rispetta il GDPR (Regolamento Generale sulla Protezione dei Dati). Non essendoci raccolta di dati personali identificativi, la maggior parte degli obblighi non si applica. Tuttavia, manteniamo i principi di trasparenza e data minimization.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Linee Guida -->
+    <section id="linee-guida" style="padding: var(--spacing-3xl) 0;">
+        <div class="container" style="max-width: 900px;">
+            <h2 style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-xl); color: var(--color-primary); text-align: center;">Linee Guida Community</h2>
+            
+            <div style="display: grid; gap: var(--spacing-lg);">
+                <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); padding: var(--spacing-xl);">
+                    <h3 style="color: var(--color-success); margin-bottom: var(--spacing-md); display: flex; align-items: center; gap: 8px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Comportamenti Incoraggiati
+                    </h3>
+                    <ul style="margin-left: 20px; line-height: 1.8; color: var(--color-text-secondary);">
+                        <li>Recensioni oneste e dettagliate</li>
+                        <li>Rispetto verso altri membri e vendor</li>
+                        <li>Condivisione di informazioni verificate</li>
+                        <li>Segnalazione di problematiche reali</li>
+                        <li>Supporto alla riduzione del danno</li>
+                    </ul>
+                </div>
+                
+                <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); padding: var(--spacing-xl);">
+                    <h3 style="color: var(--color-alert); margin-bottom: var(--spacing-md); display: flex; align-items: center; gap: 8px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="15" y1="9" x2="9" y2="15"/>
+                            <line x1="9" y1="9" x2="15" y2="15"/>
+                        </svg>
+                        Comportamenti Vietati
+                    </h3>
+                    <ul style="margin-left: 20px; line-height: 1.8; color: var(--color-text-secondary);">
+                        <li>Spam o recensioni false</li>
+                        <li>Diffamazione o attacchi personali</li>
+                        <li>Manipolazione dei rating</li>
+                        <li>Pubblicità non autorizzata</li>
+                        <li>Condivisione di informazioni pericolose</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span>TrustCheck</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Sistema di feedback della community SMOCARNO<br>
+                        per la riduzione del danno e la condivisione consapevole.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Navigazione</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="vendors.html">Vendor</a></li>
+                            <li><a href="recensione.html">Lascia Recensione</a></li>
+                            <li><a href="info.html">Info & FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Risorse</h4>
+                        <ul>
+                            <li><a href="info.html#faq">FAQ</a></li>
+                            <li><a href="info.html#linee-guida">Linee Guida</a></li>
+                            <li><a href="info.html#privacy">Privacy Policy</a></li>
+                            <li><a href="info.html#badge">Sistema Badge</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Community</h4>
+                        <ul>
+                            <li><a href="#">Telegram: Chat Aperta</a></li>
+                            <li><a href="#">Telegram: Guide</a></li>
+                            <li><a href="#">Telegram: Vendor</a></li>
+                            <li><a href="#">Telegram: Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-disclaimer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+                <p>
+                    TrustCheck promuove la riduzione del danno e la condivisione responsabile di informazioni. 
+                    Non incoraggiamo attività illegali. Consultare sempre le leggi locali e fonti sanitarie ufficiali.
+                </p>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 TrustCheck - SMOCARNO Community. Sistema aperto e moderato.</p>
+                <a href="admin.html" class="footer-admin-link" title="Area riservata">Admin</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+        
+        // Open FAQ from hash
+        if (window.location.hash && window.location.hash.includes('faq')) {
+            setTimeout(() => {
+                document.querySelector('.faq-item')?.classList.add('active');
+            }, 500);
+        }
+    </script>
+</body>
+</html>

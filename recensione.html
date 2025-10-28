@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lascia Recensione - TrustCheck SMOCARNO</title>
+    <meta name="description" content="Condividi la tua esperienza in modo anonimo e aiuta la community SMOCARNO.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <svg class="brand-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="brand-name">TrustCheck</span>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="vendors.html" class="nav-link">Vendor</a></li>
+                <li><a href="recensione.html" class="nav-link active">Lascia Recensione</a></li>
+                <li><a href="info.html" class="nav-link">Info & FAQ</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Cambia tema">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Lascia una Recensione</h1>
+            <p class="page-description">
+                La tua esperienza aiuta tutta la community. Tutte le recensioni sono completamente anonime e contribuiscono alla sicurezza collettiva.
+            </p>
+        </div>
+    </section>
+
+    <!-- Review Form -->
+    <section style="padding: var(--spacing-3xl) 0;">
+        <div class="container" style="max-width: 800px;">
+            <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-xl); padding: var(--spacing-2xl); box-shadow: var(--shadow-lg);">
+                
+                <div style="background: rgba(82, 183, 136, 0.1); border: 1px solid var(--color-success); border-radius: var(--border-radius-md); padding: var(--spacing-lg); margin-bottom: var(--spacing-2xl); display: flex; gap: var(--spacing-md);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-success); flex-shrink: 0;">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <div style="font-size: var(--font-size-sm); line-height: 1.7;">
+                        <strong>Garanzia Anonimato:</strong> Non raccogliamo IP, cookies di tracking o informazioni identificative. La tua recensione è completamente anonima.
+                    </div>
+                </div>
+                
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label class="form-label">Seleziona Vendor *</label>
+                        <select class="form-select" id="vendorSelect" required>
+                            <option value="">Scegli un vendor...</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: var(--spacing-2xl);">
+                        <h3 style="margin-bottom: var(--spacing-lg); color: var(--color-primary);">Valutazione (da 0 a 5)</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Affidabilità</label>
+                            <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                                <input type="range" min="0" max="5" step="0.5" value="4" style="flex: 1;">
+                                <span style="font-weight: 600; min-width: 40px; text-align: center;">4.0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Qualità Prodotto/Servizio</label>
+                            <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                                <input type="range" min="0" max="5" step="0.5" value="4" style="flex: 1;">
+                                <span style="font-weight: 600; min-width: 40px; text-align: center;">4.0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Comunicazione</label>
+                            <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                                <input type="range" min="0" max="5" step="0.5" value="4" style="flex: 1;">
+                                <span style="font-weight: 600; min-width: 40px; text-align: center;">4.0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Sicurezza & Privacy</label>
+                            <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                                <input type="range" min="0" max="5" step="0.5" value="4" style="flex: 1;">
+                                <span style="font-weight: 600; min-width: 40px; text-align: center;">4.0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Tempi di Consegna</label>
+                            <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                                <input type="range" min="0" max="5" step="0.5" value="4" style="flex: 1;">
+                                <span style="font-weight: 600; min-width: 40px; text-align: center;">4.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Esperienza Dettagliata (opzionale)</label>
+                        <textarea class="form-textarea" placeholder="Condividi dettagli sulla tua esperienza..." maxlength="1000"></textarea>
+                        <span class="form-help">Max 1000 caratteri - <span id="charCount">0</span>/1000</span>
+                    </div>
+                    
+                    <div style="display: flex; gap: var(--spacing-md); margin-top: var(--spacing-xl);">
+                        <button type="button" class="btn btn-outline" style="flex: 1;" onclick="window.location.href='vendors.html'">
+                            Annulla
+                        </button>
+                        <button type="submit" class="btn btn-primary" style="flex: 1;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            Invia Recensione Anonima
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span>TrustCheck</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Sistema di feedback della community SMOCARNO<br>
+                        per la riduzione del danno e la condivisione consapevole.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Navigazione</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="vendors.html">Vendor</a></li>
+                            <li><a href="recensione.html">Lascia Recensione</a></li>
+                            <li><a href="info.html">Info & FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Risorse</h4>
+                        <ul>
+                            <li><a href="info.html#faq">FAQ</a></li>
+                            <li><a href="info.html#linee-guida">Linee Guida</a></li>
+                            <li><a href="info.html#privacy">Privacy Policy</a></li>
+                            <li><a href="info.html#badge">Sistema Badge</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Community</h4>
+                        <ul>
+                            <li><a href="#">Telegram: Chat Aperta</a></li>
+                            <li><a href="#">Telegram: Guide</a></li>
+                            <li><a href="#">Telegram: Vendor</a></li>
+                            <li><a href="#">Telegram: Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-disclaimer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+                <p>
+                    TrustCheck promuove la riduzione del danno e la condivisione responsabile di informazioni. 
+                    Non incoraggiamo attività illegali. Consultare sempre le leggi locali e fonti sanitarie ufficiali.
+                </p>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 TrustCheck - SMOCARNO Community. Sistema aperto e moderato.</p>
+                <a href="admin.html" class="footer-admin-link" title="Area riservata">Admin</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Populate vendor dropdown
+        document.addEventListener('DOMContentLoaded', () => {
+            const select = document.getElementById('vendorSelect');
+            const vendors = JSON.parse(localStorage.getItem('trustcheck_vendors_db') || '[]');
+            
+            vendors.forEach(vendor => {
+                const option = document.createElement('option');
+                option.value = vendor.id;
+                option.textContent = vendor.name;
+                select.appendChild(option);
+            });
+            
+            // Setup range sliders
+            document.querySelectorAll('input[type="range"]').forEach(slider => {
+                const valueSpan = slider.nextElementSibling;
+                
+                slider.addEventListener('input', (e) => {
+                    valueSpan.textContent = parseFloat(e.target.value).toFixed(1);
+                });
+            });
+            
+            // Character counter
+            const textarea = document.querySelector('textarea');
+            const charCount = document.getElementById('charCount');
+            
+            if (textarea && charCount) {
+                textarea.addEventListener('input', () => {
+                    charCount.textContent = textarea.value.length;
+                });
+            }
+            
+            // Form submit
+            document.getElementById('reviewForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                if (window.TrustCheck && window.TrustCheck.showToast) {
+                    window.TrustCheck.showToast(
+                        'Recensione Inviata!',
+                        'Grazie per il tuo contributo alla community.',
+                        'success'
+                    );
+                }
+                
+                setTimeout(() => {
+                    window.location.href = 'vendors.html';
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
